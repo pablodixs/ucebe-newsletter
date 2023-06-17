@@ -1,16 +1,10 @@
-import { Header } from '@/components/header'
-import {
-  ContentContainer,
-  FeatureContainer,
-  Label,
-  NewsArticleContainer,
-  NewsContentContainer,
-} from '@/styles/pages/news'
 import { montserrat } from '.'
-import Link from 'next/link'
-import { ArrowLeft, ArrowUpRight } from '@phosphor-icons/react'
-import { TextContent } from '@/styles/pages/terms'
+import { ArrowLeft } from '@phosphor-icons/react'
 import { useRouter } from 'next/router'
+
+import { Header } from '@/components/header'
+import { ContentContainer } from '@/styles/pages/news'
+import { TextContent } from '@/styles/pages/terms'
 
 export default function News() {
   const router = useRouter()
@@ -92,13 +86,13 @@ export default function News() {
           </p>
           <h2>Limitação de Responsabilidade</h2>
           <p>
-            6.1. Nossa newsletter é fornecida "no estado em que se encontra",
-            sem quaisquer garantias, expressas ou implícitas. Não nos
-            responsabilizamos por quaisquer danos diretos, indiretos,
+            6.1. Nossa newsletter é fornecida &quot;no estado em que se
+            encontra&quot;, sem quaisquer garantias, expressas ou implícitas.
+            Não nos responsabilizamos por quaisquer danos diretos, indiretos,
             incidentais, consequenciais ou punitivos decorrentes do uso ou
             incapacidade de uso de nossa newsletter.
           </p>
-          <h2>Jurisdição e Lei Aplicável</h2>
+          <h2>7. Jurisdição e Lei Aplicável</h2>
           <p>
             7.1. Estes termos de uso serão regidos e interpretados de acordo com
             as leis do Brasil. Qualquer disputa relacionada a estes termos
@@ -111,9 +105,7 @@ export default function News() {
             disponíveis. Agradecemos sua atenção e esperamos que aproveite nossa
             newsletter!
           </p>
-          <p>
-            Data de entrada em vigor: 12 de junho de 2023
-          </p>
+          <p>Data de entrada em vigor: 12 de junho de 2023</p>
         </TextContent>
       </ContentContainer>
     </main>
