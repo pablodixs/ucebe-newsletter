@@ -7,18 +7,49 @@ import { ArrowUpRight, Check } from '@phosphor-icons/react'
 import { styled } from '../../stitches.config'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { FormEvent, useState } from 'react'
+import axios from 'axios'
 
 export const montserrat = Montserrat({ subsets: ['latin'] })
 
 export default function Home() {
   const router = useRouter()
+  const [email, setEmail] = useState<string>('')
+  const [error, setError] = useState<boolean>(false)
+  const [success, setSuccess] = useState<boolean>(false)
+  const [isLoading, setIsLoading] = useState<boolean>(false)
+
+  async function handleSubmit(e: FormEvent) {
+    e.preventDefault()
+    setIsLoading(true)
+    setError(false)
+    setSuccess(false)
+
+    const body = {
+      email: email,
+    }
+
+    axios
+      .post('/api/user', body)
+      .then((res) => {
+        setEmail('')
+        setSuccess(true)
+      })
+      .catch((err) => {
+        console.log(err)
+        setError(true)
+      })
+      .finally(() => {
+        setIsLoading(false)
+      })
+  }
 
   return (
     <div className={montserrat.className}>
       <Container>
         <Logo />
         <h1>Se inscreva em nossa newsletter 📝</h1>
-        <Form>
+        <Form onSubmit={(e) => handleSubmit(e)}>
           <label htmlFor="email">Seu e-mail</label>
           <input
             type="email"
@@ -26,7 +57,19 @@ export default function Home() {
             id="email"
             placeholder="someone@a.ucb.br"
             required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
+          {error && (
+            <span className="error-text">
+              E-mail já inscrito. Tente novamente.
+            </span>
+          )}
+          {success && (
+            <span className="success-text">
+              Você foi inscrito com sucesso. 🎉
+            </span>
+          )}
           <div className="check-area">
             <CheckboxRoot required id="terms">
               <CheckboxIndicator>
@@ -37,11 +80,13 @@ export default function Home() {
               Aceito os Termos de Uso e a Política de Privacidade
             </label>
           </div>
-          <Button type="submit">Tudo pronto!</Button>
+          <Button disabled={isLoading} type="submit">
+            Tudo pronto!
+          </Button>
         </Form>
         <Button onClick={() => router.push('/news')} variant="secondary">
           Ver últimas notícias
-          <ArrowUpRight weight='bold' size={24} />
+          <ArrowUpRight weight="bold" size={24} />
         </Button>
         <footer>
           <Link href={'/termosdeuso'}>Termos de Uso</Link>

@@ -80,6 +80,22 @@ export const Form = styled('form', {
       cursor: 'pointer',
     },
   },
+
+  '.error-text': {
+    display: 'block',
+    marginTop: '.5rem',
+    fontWeight: 500,
+    color: 'red',
+    textAlign: 'center',
+  },
+
+  '.success-text': {
+    display: 'block',
+    marginTop: '.5rem',
+    fontWeight: 500,
+    color: 'green',
+    textAlign: 'center',
+  },
 })
 
 export const Button = styled('button', {
@@ -101,6 +117,11 @@ export const Button = styled('button', {
 
   '&:hover': {
     backgroundColor: '#002e9c',
+  },
+
+  '&:disabled': {
+    backgroundColor: '$black',
+    cursor: 'not-allowed',
   },
 
   variants: {
