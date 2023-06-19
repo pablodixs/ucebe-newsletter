@@ -8,7 +8,6 @@ import {
 } from '@/styles/pages/news'
 import { montserrat } from '.'
 import Link from 'next/link'
-import { ArrowLeft, ArrowUpRight } from '@phosphor-icons/react'
 import { TextContent } from '@/styles/pages/terms'
 import { useRouter } from 'next/router'
 
@@ -20,9 +19,7 @@ export default function News() {
       <Header />
       <ContentContainer>
         <TextContent>
-          <button onClick={() => router.back()}>
-            <ArrowLeft size={20} /> Voltar
-          </button>
+          <button onClick={() => router.back()}>Voltar</button>
           <h1>Política de Privacidade</h1>
           <p>
             A sua privacidade é de extrema importância para nós. Esta política

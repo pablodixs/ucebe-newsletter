@@ -1,5 +1,4 @@
 import { montserrat } from '.'
-import { ArrowLeft } from '@phosphor-icons/react'
 import { useRouter } from 'next/router'
 
 import { Header } from '@/components/header'
@@ -14,9 +13,7 @@ export default function News() {
       <Header />
       <ContentContainer>
         <TextContent>
-          <button onClick={() => router.back()}>
-            <ArrowLeft size={20} /> Voltar
-          </button>
+          <button onClick={() => router.back()}>Voltar</button>
           <h1>Termos de Uso</h1>
           <p>
             Bem-vindo à nossa newsletter! Antes de prosseguir, pedimos que leia

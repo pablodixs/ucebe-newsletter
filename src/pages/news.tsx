@@ -2,7 +2,6 @@ import { Header } from '@/components/header'
 import { ContentContainer, FeatureContainer, Label, NewsArticleContainer, NewsContentContainer } from '@/styles/pages/news'
 import { montserrat } from '.'
 import Link from 'next/link'
-import { ArrowUpRight } from '@phosphor-icons/react'
 
 export default function News() {
   return (
@@ -12,7 +11,7 @@ export default function News() {
         <FeatureContainer>
           <h2>Se junte aos nossos 7 leitores ativos</h2>
           <Link href={'/'}>
-            Inscreva-se <ArrowUpRight size={18} weight="bold" />
+            Inscreva-se 
           </Link>
         </FeatureContainer>
         <NewsContentContainer>

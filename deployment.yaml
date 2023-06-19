@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ucebe-newsletter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ucebe-newsletter
+  template:
+    metadata:
+      labels:
+        app: ucebe-newsletter
+    spec:
+      containers:
+        - name: ucebe-newsletter
+          image: pablodixs/newsletter:latest
+          ports:
+            - containerPort: 3000

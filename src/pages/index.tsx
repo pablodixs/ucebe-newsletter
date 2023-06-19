@@ -2,7 +2,6 @@ import * as Checkbox from '@radix-ui/react-checkbox'
 import { Logo } from '@/components/logo'
 import { Button, Container, Form } from '@/styles/pages'
 import { Montserrat } from 'next/font/google'
-import { ArrowUpRight, Check } from '@phosphor-icons/react'
 
 import { styled } from '../../stitches.config'
 import Link from 'next/link'
@@ -72,9 +71,7 @@ export default function Home() {
           )}
           <div className="check-area">
             <CheckboxRoot required id="terms">
-              <CheckboxIndicator>
-                <Check size={24} weight="bold" />
-              </CheckboxIndicator>
+              <CheckboxIndicator>X</CheckboxIndicator>
             </CheckboxRoot>
             <label htmlFor="terms">
               Aceito os Termos de Uso e a Política de Privacidade
@@ -86,7 +83,6 @@ export default function Home() {
         </Form>
         <Button onClick={() => router.push('/news')} variant="secondary">
           Ver últimas notícias
-          <ArrowUpRight weight="bold" size={24} />
         </Button>
         <footer>
           <Link href={'/termosdeuso'}>Termos de Uso</Link>
