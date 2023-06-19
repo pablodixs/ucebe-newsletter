@@ -49,7 +49,7 @@ export const NewsContentContainer = styled('section', {
 
 export const NewsArticleContainer = styled('div', {
   backgroundColor: '$white',
-  padding: '1rem',
+  padding: '1.25rem',
   marginTop: '1rem',
   position: 'relative',
 
@@ -66,8 +66,8 @@ export const NewsArticleContainer = styled('div', {
   p: {
     color: '$gray500',
     fontWeight: 500,
-    margin: '.5rem 0 .75rem'
-  }
+    margin: '.5rem 0',
+  },
 })
 
 export const Label = styled('span', {
@@ -87,8 +87,15 @@ export const Label = styled('span', {
     category: {
       atleticas: {
         backgroundColor: '#8ADF00',
-        color: '#000'
-      }
-    }
-  }
+        color: '#000',
+      },
+    },
+  },
+})
+
+export const LoadingContainer = styled('div', {
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'center',
+  padding: '1rem',
 })

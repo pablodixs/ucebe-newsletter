@@ -7,6 +7,7 @@ import { FormEvent, useState } from 'react'
 import Link from 'next/link'
 import axios from 'axios'
 import * as Checkbox from '@radix-ui/react-checkbox'
+import { ArrowUpRight, CheckFat } from '@phosphor-icons/react'
 
 export const montserrat = Montserrat({ subsets: ['latin'] })
 
@@ -70,7 +71,9 @@ export default function Home() {
           )}
           <div className="check-area">
             <CheckboxRoot required id="terms">
-              <CheckboxIndicator>X</CheckboxIndicator>
+              <CheckboxIndicator>
+                <CheckFat size={24} weight="fill" />
+              </CheckboxIndicator>
             </CheckboxRoot>
             <label htmlFor="terms">
               Aceito os Termos de Uso e a Política de Privacidade
@@ -81,7 +84,7 @@ export default function Home() {
           </Button>
         </Form>
         <Button onClick={() => router.push('/news')} variant="secondary">
-          Ver últimas notícias
+          Ver últimas notícias <ArrowUpRight size={24} />
         </Button>
         <footer>
           <Link href={'/termosdeuso'}>Termos de Uso</Link>
