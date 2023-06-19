@@ -1,13 +1,12 @@
-import * as Checkbox from '@radix-ui/react-checkbox'
 import { Logo } from '@/components/logo'
 import { Button, Container, Form } from '@/styles/pages'
 import { Montserrat } from 'next/font/google'
-
 import { styled } from '../../stitches.config'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { FormEvent, useState } from 'react'
+import Link from 'next/link'
 import axios from 'axios'
+import * as Checkbox from '@radix-ui/react-checkbox'
 
 export const montserrat = Montserrat({ subsets: ['latin'] })
 
@@ -29,7 +28,7 @@ export default function Home() {
     }
 
     axios
-      .post('/api/user', body)
+      .post('https://api-ucebe.onrender.com/user', body)
       .then((res) => {
         setEmail('')
         setSuccess(true)
